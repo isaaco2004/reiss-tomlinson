@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reiss Tomlinson — Actor</title>
+<meta name="description" content="Reiss Tomlinson, actor based in Greater Manchester. About, showreel, credits, gallery and representation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f1ebdf; --cream-2:#e7dfcf; --paper:#faf7f1;
+    --green:#1f3a2f; --green-2:#2c4d3f; --sage:#9fb3a4;
+    --clay:#c0582f; --clay-2:#a84a25;
+    --ink:#1c2420; --ink-2:#55605a; --line:rgba(31,58,47,.16); --line-l:rgba(241,235,223,.18);
+    --serif:"Fraunces", Georgia, serif; --sans:"DM Sans", system-ui, sans-serif;
+    --gutter:clamp(16px,4vw,56px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{padding:0 var(--gutter);max-width:1280px;margin:0 auto}
+  .pad{padding:clamp(28px,3vw,44px) 0}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacing:-.015em}
+  .kicker{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--clay)}
+  .kicker::before{content:"";width:22px;height:1.5px;background:currentColor}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:24px}
+  .sec-head h2{font-size:clamp(40px,5vw,68px);margin-top:6px}
+  .sec-head h2 em{font-style:italic;color:var(--clay)}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--clay);color:var(--paper);border-radius:6px;padding:13px 22px;font-weight:600;font-size:14px;transition:background .2s,transform .2s}
+  .btn:hover{background:var(--clay-2);transform:translateY(-2px)}
+  .btn.line{background:transparent;color:var(--green);box-shadow:inset 0 0 0 1.5px var(--green)}
+  .btn.line:hover{background:var(--green);color:var(--cream)}
+  .btn svg{width:16px;height:16px}
+
+  /* NAV */
+  nav{position:fixed;inset:0 0 auto;z-index:50;background:rgba(241,235,223,.96);backdrop-filter:blur(8px);transition:box-shadow .3s}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:16px;padding-bottom:16px}
+  nav.solid{background:rgba(241,235,223,.95);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+  .wordmark{font-family:var(--serif);font-size:22px;font-weight:600}
+  .wordmark i{font-weight:400;color:var(--clay)}
+  nav ul{display:flex;gap:28px;list-style:none}
+  nav ul a{font-size:14px;font-weight:500;color:var(--ink-2);transition:color .2s}
+  nav ul a:hover,nav ul a.on{color:var(--green)}
+  nav ul a.on{text-decoration:underline;text-decoration-color:var(--clay);text-decoration-thickness:2px;text-underline-offset:6px}
+  nav .btn{padding:9px 16px;font-size:13px}
+  .burger{display:none;background:none;border:0;font:600 13px var(--sans);color:var(--green);cursor:pointer}
+
+  /* HERO */
+  .hero{position:relative;min-height:100svh;display:grid;grid-template-columns:1.15fr 1fr;align-items:stretch}
+  .hero-panel{position:absolute;top:0;right:0;bottom:0;width:38%;background:var(--green)}
+  .hero-text{position:relative;display:flex;flex-direction:column;justify-content:center;padding:110px var(--gutter) 60px max(var(--gutter),calc((100vw - 1280px)/2 + var(--gutter)))}
+  .hero h1{font-size:clamp(64px,8.6vw,136px);margin:16px 0 22px;line-height:.9}
+  .hero h1 em{display:block;font-style:italic;font-weight:400;color:var(--green-2)}
+  .hero .intro{max-width:44ch;color:var(--ink-2);font-size:16.5px}
+  .facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin:24px 0 28px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px}
+  .facts b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);font-weight:600}
+  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-photo{position:relative;display:flex;align-items:center;justify-content:center;padding:110px var(--gutter) 60px}
+  .frame{position:relative;width:min(100%,440px);padding:12px;background:var(--paper);box-shadow:0 30px 70px -30px rgba(0,0,0,.55)}
+  .frame img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%}
+  .frame figcaption{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-2);padding-top:10px}
+
+  /* ABOUT */
+  .about{background:var(--green);color:var(--cream)}
+  .about .kicker{color:#e59a73}
+  .about h2{color:var(--cream)}
+  .about h2 em{color:#e59a73}
+  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(28px,5vw,72px)}
+  .about .lede{font-family:var(--serif);font-size:clamp(22px,2.3vw,30px);line-height:1.3;margin-bottom:18px}
+  .about .lede em{color:#e59a73}
+  .about p{color:#d4d9d2;max-width:62ch;margin-bottom:14px}
+  .about p em{color:var(--cream)}
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l);margin-top:26px}
+  .stat-row div{padding:16px 0;text-align:left}
+  .stat-row div+div{padding-left:18px;border-left:1px solid var(--line-l)}
+  .stat-row strong{display:block;font-family:var(--serif);font-size:clamp(34px,3.4vw,46px);font-weight:500;line-height:1}
+  .stat-row span{font-size:12.5px;color:var(--sage)}
+  .spec{background:var(--green-2);border-radius:10px;padding:22px 24px}
+  .spec h3{font-size:22px;margin-bottom:8px}
+  .spec dl{display:grid;grid-template-columns:auto 1fr;gap:0 18px}
+  .spec dt,.spec dd{padding:9px 0;border-bottom:1px solid var(--line-l);font-size:14px}
+  .spec dt{color:var(--sage)}
+  .spec dd{text-align:right}
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
+  .skills h3{font-size:19px;margin-bottom:10px;color:var(--cream)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chips span{border:1px solid var(--line-l);border-radius:4px;padding:4px 10px;font-size:12.5px;color:#dfe3dc}
+  .training{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+  .training div{border-left:2px solid var(--clay);padding:4px 0 4px 14px}
+  .training small{font-size:12px;color:var(--sage)}
+  .training p{color:var(--cream);margin:0;font-family:var(--serif);font-size:17px;line-height:1.3}
+
+  /* REEL */
+  .reel-frame{position:relative;aspect-ratio:16/9;background:#0f1a15;overflow:hidden;border-radius:8px;cursor:pointer}
+  .reel-frame video{width:100%;height:100%;object-fit:cover;display:block}
+  .reel-frame .poster{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:space-between;padding:clamp(16px,3vw,32px);background:linear-gradient(0deg,rgba(15,26,21,.75),transparent 55%);transition:opacity .4s}
+  .reel-frame.on .poster{opacity:0;pointer-events:none}
+  .poster .t{color:var(--cream);font-family:var(--serif);font-size:clamp(24px,3vw,40px);font-style:italic}
+  .play{display:inline-flex;align-items:center;gap:12px;background:var(--clay);color:var(--paper);border-radius:100px;padding:12px 22px 12px 14px;font-weight:600;font-size:14px;transition:background .2s}
+  .play i{width:34px;height:34px;border-radius:50%;background:var(--paper);display:grid;place-items:center}
+  .play i svg{width:13px;fill:var(--clay);margin-left:2px}
+  .reel-frame:hover .play{background:var(--clay-2)}
+  .reel-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:14px;font-size:14px;color:var(--ink-2)}
+  .reel-meta a{color:var(--green);font-weight:600;text-decoration:underline;text-decoration-color:var(--clay);text-underline-offset:4px}
+
+  /* CREDITS */
+  .tabs{display:flex;gap:6px;flex-wrap:wrap}
+  .tabs button{background:none;border:1.5px solid var(--line);border-radius:6px;padding:8px 14px;font:500 13px var(--sans);color:var(--ink-2);cursor:pointer;transition:.2s}
+  .tabs button:hover{border-color:var(--green);color:var(--green)}
+  .tabs button.on{background:var(--green);border-color:var(--green);color:var(--cream)}
+  .table{width:100%;border-collapse:collapse}
+  .table th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);font-weight:600;text-align:left;padding:0 12px 10px 0;border-bottom:1.5px solid var(--green)}
+  .table td{padding:15px 12px 15px 0;border-bottom:1px solid var(--line);vertical-align:baseline;font-size:14.5px}
+  .table tr:hover td{background:var(--paper)}
+  .table .yr{color:var(--ink-2);width:70px}
+  .table .title{font-family:var(--serif);font-size:21px;font-weight:500}
+  .table .type{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--green-2);background:var(--cream-2);border-radius:4px;padding:2px 8px}
+  .table .muted{color:var(--ink-2)}
+  .table tr.feature .title{color:var(--clay)}
+  .table tr.feature .title::after{content:" ★";font-size:.6em;vertical-align:super}
+
+  /* GALLERY PREVIEW */
+  .gallery-sec{background:var(--paper)}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:clamp(240px,28vw,380px);gap:12px}
+  .gallery figure{overflow:hidden;border-radius:6px;cursor:zoom-in;background:var(--cream-2)}
+  .gallery .wide{grid-column:span 2}
+  .gallery img{width:100%;height:100%;object-fit:cover;object-position:center 25%;transition:transform 1s}
+  .gallery figure:hover img{transform:scale(1.04)}
+  .gallery-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:18px;font-size:12.5px;color:var(--ink-2)}
+  .lightbox{position:fixed;inset:0;background:rgba(15,26,21,.95);z-index:100;display:none;place-items:center;padding:4vh 4vw;cursor:zoom-out}
+  .lightbox.on{display:grid}
+  .lightbox img{max-height:92vh;width:auto}
+
+  /* CONTACT */
+  .contact{background:var(--clay);color:var(--paper)}
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center;padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(40px,5vw,64px)}
+  .contact .kicker{color:var(--paper)}
+  .contact h2{font-size:clamp(46px,6vw,84px);margin:8px 0 14px}
+  .contact h2 em{font-style:italic;font-weight:400}
+  .contact .lead{max-width:40ch;color:#fbe6da}
+  .agent{background:var(--paper);color:var(--ink);border-radius:10px;padding:26px 28px}
+  .agent small{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  .agent h3{font-size:26px;margin:6px 0 12px;color:var(--green)}
+  .agent p{font-size:14px;color:var(--ink-2);margin-bottom:4px}
+  .agent a.u{color:var(--green);font-weight:500;text-decoration:underline;text-decoration-color:var(--clay);text-underline-offset:3px}
+  .agent .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  footer{background:var(--green);color:var(--sage);font-size:12.5px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:16px;padding-bottom:16px}
+
+  .rv{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+  .rv.in{opacity:1;transform:none}
+
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr}
+    .hero-panel{top:auto;width:100%;height:42%}
+    .hero-text{padding:100px var(--gutter) 20px}
+    .hero-photo{padding:10px var(--gutter) 40px}
+    .frame{width:min(100%,380px)}
+    .about-grid{grid-template-columns:1fr}
+    .skills,.training{grid-template-columns:1fr 1fr}
+    .gallery{grid-template-columns:1fr 1fr;grid-auto-flow:dense}
+    .contact .wrap{grid-template-columns:1fr}
+    .table .dir,.table th.dir{display:none}
+  }
+  @media (max-width:680px){
+    nav ul{display:none;position:fixed;inset:0;background:var(--cream);flex-direction:column;align-items:center;justify-content:center;gap:26px}
+    nav ul.open{display:flex}
+    nav ul a{font-size:18px}
+    nav .btn.nav-cta{display:none}
+    .burger{display:block;position:relative;z-index:60}
+    .stat-row{grid-template-columns:1fr 1fr}
+    .stat-row div:nth-child(3){padding-left:0;border-left:0}
+    .stat-row div:nth-child(n+3){border-top:1px solid var(--line-l)}
+    .skills,.training{grid-template-columns:1fr}
+    .table .co,.table th.co{display:none}
+    .table .title{font-size:18px}
+    .gallery{grid-auto-rows:200px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none !important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#top" class="wordmark">Reiss <i>Tomlinson</i></a>
+    <ul id="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#reel">Showreel</a></li>
+      <li><a href="#credits">Credits</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn nav-cta">Get in touch</a>
+    <button class="burger" id="burger" aria-label="Menu">Menu</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-panel" aria-hidden="true"></div>
+  <div class="hero-text">
+    <span class="kicker">Actor · Musician</span>
+    <h1>Reiss<em>Tomlinson</em></h1>
+    <p class="intro">Greater Manchester-based actor working across screen, stage and radio, and co-founder of the theatre company Theatre On Draught.</p>
+    <div class="facts">
+      <div><b>Based</b>Manchester · London · S. Yorkshire</div>
+      <div><b>Playing age</b>16 – 25</div>
+      <div><b>Height</b>5′9″</div>
+    </div>
+    <div class="ctas">
+      <a class="btn" href="#reel"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"/></svg>Watch showreel</a>
+      <a class="btn line" href="#contact">Contact agent</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <figure class="frame">
+      <img src="assets/headshot-1.jpg" alt="Reiss Tomlinson headshot">
+      <figcaption><span>Reiss Tomlinson</span><span>© Tom Barker</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="about pad" style="padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(40px,5vw,64px)">
+  <div class="wrap">
+    <div class="sec-head rv"><div><span class="kicker">01 — About</span><h2>About <em>Reiss</em></h2></div></div>
+    <div class="about-grid">
+      <div>
+        <p class="lede rv">Recently seen as <em>Young Danny Sloane</em> in the BBC's <em>Ludwig</em>.</p>
+        <p class="rv">Reiss played the lead in the short film <em>Condensation</em>, which premiered at the SCENE Film Festival at HOME. He co-founded the theatre company <em>Theatre On Draught</em>, which debuted its first play, <em>The Divine Move</em>, at the Greater Manchester Fringe and continues to make new work.</p>
+        <p class="rv">He trained in acting at the University of Lancashire and completed the National Youth Theatre's summer course this year. Away from acting, Reiss is writing and developing original music.</p>
+        <div class="stat-row rv">
+          <div><strong>18</strong><span>Credits</span></div>
+          <div><strong>8</strong><span>Screen roles</span></div>
+          <div><strong>6</strong><span>Stage roles</span></div>
+          <div><strong>8</strong><span>Accents</span></div>
+        </div>
+      </div>
+      <aside class="spec rv">
+        <h3>At a glance</h3>
+        <dl>
+          <dt>Pronouns</dt><dd>He / Him</dd>
+          <dt>Playing age</dt><dd>16 – 25</dd>
+          <dt>Height</dt><dd>5′9″ (175cm)</dd>
+          <dt>Eyes</dt><dd>Brown</dd>
+          <dt>Hair</dt><dd>Light/Mid Brown, mid length</dd>
+          <dt>Nationality</dt><dd>British</dd>
+          <dt>Voice</dt><dd>Tenor</dd>
+          <dt>Licence</dt><dd>Full UK driving</dd>
+        </dl>
+      </aside>
+    </div>
+    <div class="skills rv">
+      <div><h3>Accents</h3><div class="chips"><span>Standard English</span><span>Sheffield</span><span>Yorkshire</span><span>Black Country</span><span>RP</span><span>Northern Irish</span><span>American Standard</span><span>American Southern</span></div></div>
+      <div><h3>Music &amp; performance</h3><div class="chips"><span>Guitar</span><span>Musical Theatre</span><span>Physical Theatre</span><span>Clown</span><span>Comedy</span><span>Radio Drama</span><span>Presenting</span><span>Voice Over</span></div></div>
+      <div><h3>Sport &amp; physical</h3><div class="chips"><span>Boxing</span><span>Stage Combat</span><span>Football</span><span>Basketball</span><span>Open-water Swimming</span><span>Lifeguard (NPLQ)</span><span>Wakeboarding</span><span>Snooker</span></div></div>
+    </div>
+    <div class="training rv">
+      <div><small>2026</small><p>National Youth Theatre — Leeds Intake Course</p></div>
+      <div><small>2022 – 2025</small><p>University of Lancashire — Acting</p></div>
+      <div><small>2014 – 2018</small><p>Carney Academy — Acting, Singing &amp; Dancing</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REEL -->
+<section id="reel" class="pad">
+  <div class="wrap">
+    <div class="sec-head rv"><div><span class="kicker">02 — Showreel</span><h2>Show<em>reel</em></h2></div></div>
+    <div class="reel-frame rv" id="reelFrame">
+      <video id="reelVid" preload="metadata" playsinline controls src="assets/showreel.mp4#t=24"></video>
+      <div class="poster">
+        <span class="t">Screen reel, 2026</span>
+        <span class="play"><i><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9z"/></svg></i>Play · 3:01</span>
+      </div>
+    </div>
+    <div class="reel-meta rv">
+      <span>Includes <em>Ludwig</em> (BBC) and <em>Condensation</em></span>
+      <a href="https://app.spotlight.com/5571-1273-7959" target="_blank" rel="noopener">Voice reel (2:25) on Spotlight →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CREDITS -->
+<section id="credits" class="pad">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="kicker">03 — Credits</span><h2>Cred<em>its</em></h2></div>
+      <div class="tabs" id="tabs">
+        <button class="on" data-f="All">All</button>
+        <button data-f="Screen">Screen</button>
+        <button data-f="Stage">Stage</button>
+        <button data-f="Audio">Radio &amp; Ident</button>
+      </div>
+    </div>
+    <table class="table rv">
+      <thead><tr><th>Year</th><th>Production</th><th>Role</th><th class="dir">Director</th><th class="co">Company</th></tr></thead>
+      <tbody id="list"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="pad gallery-sec">
+  <div class="wrap">
+    <div class="sec-head rv"><div><span class="kicker">04 — Gallery</span><h2>Gal<em>lery</em></h2></div></div>
+    <div class="gallery rv">
+      <figure><img loading="lazy" src="assets/headshot-3.jpg" alt="Headshot"></figure>
+      <figure class="wide"><img loading="lazy" src="assets/ferryman-still.jpg" alt="The Ferryman production still" style="object-position:center 35%"></figure>
+      <figure><img loading="lazy" src="assets/headshot-4.jpg" alt="Headshot"></figure>
+      <figure><img loading="lazy" src="assets/headshot-2.jpg" alt="Headshot"></figure>
+      <figure><img loading="lazy" src="assets/headshot-5.jpg" alt="Headshot"></figure>
+    </div>
+    <div class="gallery-foot rv">
+      <span>Headshots © Tom Barker</span>
+      <a class="btn" href="template-3-gallery.html">View all photos <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+<div class="lightbox" id="lb"><img alt=""></div>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker">05 — Contact</span>
+      <h2>Let's <em>work together</em></h2>
+      <p class="lead">For casting enquiries, availability and self-tapes, please contact Reiss's agent.</p>
+    </div>
+    <div class="agent rv">
+      <small>Representation</small>
+      <h3>Circuit Personal Management</h3>
+      <p>Suite 1.7, Universal Square, Devonshire Street North, Manchester M12 6JH</p>
+      <p><a class="u" href="tel:+443309950069">0330 995 0069</a> · <a class="u" href="mailto:circuitpm@outlook.com">circuitpm@outlook.com</a></p>
+      <div class="btns">
+        <a class="btn" href="mailto:circuitpm@outlook.com">Email agent →</a>
+        <a class="btn line" href="https://app.spotlight.com/5571-1273-7959" target="_blank" rel="noopener">Spotlight</a>
+        <a class="btn line" href="https://www.instagram.com/reisstomlinson/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor" stroke="none"/></svg>@reisstomlinson</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap"><span>© <span id="yr"></span> Reiss Tomlinson</span><span>Photography © Tom Barker</span></div></footer>
+
+<script>
+const credits=[
+  ["2026","Ludwig","Television","Young Danny Sloane","Stella Corradi","Big Talk Studios / BBC","Screen",1],
+  ["2026","Condensation","Short Film","Jordan (Lead)","Joshua Val Martin","IAP:MCR","Screen",1],
+  ["2026","Four Feet Eleven Inches","Short Film","Drug Buyer","Elliot Morris","Lost In Salford Productions","Screen"],
+  ["2025","A Year Apart","Short Film","Man at Pub","Elliot Morris","Sapient Films","Screen"],
+  ["2025","By the Seaside","Short Film","Harry","Jack Stephenson","UCLan","Screen"],
+  ["2025","Crap Chat","Radio","Benjie","Henry Liston","UCLan","Audio"],
+  ["2025","Seventeen","Short Film","Cameron","Simon Ashton","Linear North Films","Screen"],
+  ["2025","The Silver Doctor","Radio","John Perkins","Sebastian Towyn-Brown","Brown Productions","Audio"],
+  ["2025","(Redacted)","Short Film","Jason","Joseph Ingham","—","Screen"],
+  ["2025","The Ferryman","Stage","Diarmaid Corcoran","Terence Mann","UCLan","Stage"],
+  ["2025","In the Doghouse","Short Film","Sam","Oliver Wilson","UCLan","Screen"],
+  ["2024","Digital Footprint 2","Ident","Reece","Adam Farrar-Amiger","UCLan","Audio"],
+  ["2024","Baal","Stage","Baal","Amy Rome","UCLan","Stage"],
+  ["2024","The Christmas Truce","Stage","Alf","Mark Whitelaw","UCLan","Stage"],
+  ["2024","The Pals","Radio","Arthur","L. J. Atkinson","UCLan","Audio"],
+  ["2023","A Doll's House","Stage","Dr Rank","Helen Tolson","UCLan","Stage"],
+  ["2023","Macbeth","Stage","Porter","Sarah Stone","UCLan","Stage"],
+  ["2016","The Full Monty","Stage","Nathan","Jack Ryder","David Pugh Ltd","Stage"]
+];
+const list=document.getElementById('list');
+function render(f){
+  list.innerHTML=credits.filter(c=>f==='All'||c[6]===f).map(c=>`<tr class="${c[7]?'feature':''}"><td class="yr">${c[0]}</td><td><div class="title">${c[1]}</div><span class="type">${c[2]}</span></td><td>${c[3]}</td><td class="dir muted">${c[4]}</td><td class="co muted">${c[5]}</td></tr>`).join('');
+  document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.f===f));
+}
+document.getElementById('tabs').addEventListener('click',e=>{if(e.target.dataset.f)render(e.target.dataset.f)});
+render('All');
+
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40),{passive:true});
+const menu=document.getElementById('menu'),burger=document.getElementById('burger');
+burger.onclick=()=>{menu.classList.toggle('open');burger.textContent=menu.classList.contains('open')?'Close':'Menu'};
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');burger.textContent='Menu'}));
+const secs=['about','reel','credits','gallery','contact'].map(id=>document.getElementById(id));
+addEventListener('scroll',()=>{let cur='';secs.forEach(s=>{if(s.getBoundingClientRect().top<120)cur=s.id});menu.querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur))},{passive:true});
+
+const frame=document.getElementById('reelFrame'),vid=document.getElementById('reelVid');
+frame.querySelector('.poster').onclick=()=>{frame.classList.add('on');vid.currentTime=0;vid.play()};
+
+const lb=document.getElementById('lb');
+document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});
+lb.onclick=()=>lb.classList.remove('on');
+addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

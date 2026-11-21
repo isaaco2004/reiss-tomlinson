@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery — Reiss Tomlinson</title>
+<meta name="description" content="Headshots and production photography of actor Reiss Tomlinson.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a; --bg-2:#121211; --line:#2a2927; --ink:#ece7df; --muted:#8f8a82; --accent:#c9a978;
+    --serif:"Cormorant Garamond", Georgia, serif; --sans:"Manrope", system-ui, sans-serif;
+    --gutter:clamp(16px,4vw,56px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .label{font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:500;color:var(--muted)}
+  .wrap{padding:0 var(--gutter);max-width:1440px;margin:0 auto}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px var(--gutter);background:rgba(10,10,10,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .mono{font-family:var(--serif);font-size:26px;font-style:italic;letter-spacing:.02em}
+  nav ul{display:flex;gap:34px;list-style:none}
+  nav ul a{font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;opacity:.75;transition:opacity .2s}
+  nav ul a:hover,nav ul a.on{opacity:1}
+  nav ul a.on{color:var(--accent)}
+  .burger{display:none;background:none;border:0;color:var(--ink);font:500 11px/1 var(--sans);letter-spacing:.3em;cursor:pointer}
+
+  /* HEAD */
+  .page-head{padding:clamp(32px,4vw,56px) 0 0}
+  .back{display:inline-block;margin-bottom:18px;transition:color .2s}
+  .back:hover{color:var(--ink)}
+  .head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:24px}
+  .head h1{font-family:var(--serif);font-weight:400;font-size:clamp(48px,7vw,104px);line-height:1}
+  .head h1 em{color:var(--accent)}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap}
+  .tabs button{background:none;border:1px solid var(--line);color:var(--muted);font:500 11px/1 var(--sans);letter-spacing:.25em;text-transform:uppercase;padding:12px 18px;cursor:pointer;transition:.2s}
+  .tabs button:hover{color:var(--ink)}
+  .tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+  /* GRID — even rows */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));grid-auto-rows:clamp(260px,28vw,380px);gap:10px;padding-bottom:clamp(32px,4vw,56px)}
+  .grid figure{position:relative;overflow:hidden;cursor:zoom-in;background:var(--bg-2)}
+  .grid figure.landscape{grid-column:span 2}
+  .grid img{width:100%;height:100%;object-fit:cover;object-position:center 25%;filter:grayscale(1);transition:filter .7s,transform 1.2s}
+  .grid figure:hover img{filter:grayscale(0);transform:scale(1.03)}
+  .grid figcaption{position:absolute;left:14px;right:14px;bottom:12px;display:flex;justify-content:space-between;gap:10px;font-size:10px;letter-spacing:.25em;text-transform:uppercase;opacity:0;transition:opacity .4s;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+  .grid figure:hover figcaption{opacity:.9}
+  .empty{padding:40px 0;color:var(--muted)}
+
+  /* LIGHTBOX */
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(5,5,5,.97);display:none;grid-template-columns:72px 1fr 72px;align-items:center;padding:3vh 2vw}
+  .lb.on{display:grid}
+  .lb figure{display:flex;flex-direction:column;align-items:center;gap:14px;min-width:0}
+  .lb img{max-height:84vh;width:auto;max-width:100%}
+  .lb figcaption{text-align:center}
+  .lb button{width:54px;height:54px;border-radius:50%;border:1px solid rgba(236,231,223,.5);background:none;color:var(--ink);font-size:22px;line-height:1;cursor:pointer;justify-self:center;transition:background .2s}
+  .lb button:hover{background:rgba(236,231,223,.1)}
+  .lb .close{position:absolute;top:18px;right:18px;width:44px;height:44px;font-size:18px}
+
+  .cta{border-top:1px solid var(--line)}
+  .cta .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;padding-top:32px;padding-bottom:32px}
+  .cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.6vw,48px);line-height:1}
+  .cta h2 em{color:var(--accent)}
+  .btn{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--ink);padding:14px 22px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;transition:.3s}
+  .btn:hover{background:var(--ink);color:var(--bg)}
+  footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:26px var(--gutter);border-top:1px solid var(--line);font-size:11px;color:var(--muted);letter-spacing:.1em}
+
+  @media (max-width:900px){
+    nav ul{display:none;position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:center;align-items:center;gap:30px}
+    nav ul.open{display:flex}
+    nav ul a{font-size:14px}
+    .burger{display:block;position:relative;z-index:60}
+    .grid{grid-template-columns:1fr 1fr;grid-auto-rows:220px;gap:8px}
+    .grid figure.landscape{grid-column:span 2}
+    .grid figcaption{opacity:.9}
+    .lb{grid-template-columns:46px 1fr 46px}
+    .lb button{width:40px;height:40px;font-size:18px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="template-1-noir.html#top" class="mono">R.T.</a>
+  <ul id="menu">
+    <li><a href="template-1-noir.html#about">About</a></li>
+    <li><a href="template-1-noir.html#reel">Reel</a></li>
+    <li><a href="template-1-noir.html#credits">Credits</a></li>
+    <li><a href="template-1-gallery.html" class="on">Gallery</a></li>
+    <li><a href="template-1-noir.html#contact">Contact</a></li>
+  </ul>
+  <button class="burger" id="burger" aria-label="Menu">Menu</button>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <a class="back label" href="template-1-noir.html#gallery">← Back to home</a>
+    <div class="head">
+      <div>
+        <h1>Gal<em>lery</em></h1>
+        <p class="label" id="count" style="margin-top:12px"></p>
+      </div>
+      <div class="tabs" id="tabs"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid" id="grid"></div>
+</main>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Need high-res <em>images?</em></h2>
+    <a class="btn" href="mailto:circuitpm@outlook.com">Contact his agent →</a>
+  </div>
+</section>
+<footer><span>© <span id="yr"></span> Reiss Tomlinson</span><span>Headshots © Tom Barker</span></footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="prev" aria-label="Previous photo">‹</button>
+  <figure><img alt=""><figcaption class="label"></figcaption></figure>
+  <button class="next" aria-label="Next photo">›</button>
+  <button class="close" aria-label="Close">✕</button>
+</div>
+
+<script>
+/* ─────────────────────────────────────────────────────────────
+   ADD PHOTOS HERE
+   1. Put the image in the assets folder.
+   2. Add a line below. "type" decides which filter it appears under:
+      "Headshots", "Production" or anything new (a new name becomes
+      a new filter button automatically).
+   3. Set landscape:true for wide photos so they span two columns.
+   ───────────────────────────────────────────────────────────── */
+const photos = [
+  { src:"assets/headshot-1.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
+  { src:"assets/headshot-3.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
+  { src:"assets/ferryman-still.jpg", type:"Production", caption:"The Ferryman — Diarmaid Corcoran", credit:"", landscape:true },
+  { src:"assets/headshot-4.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
+  { src:"assets/headshot-2.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
+  { src:"assets/headshot-5.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
+];
+
+const grid=document.getElementById('grid'), tabs=document.getElementById('tabs'), count=document.getElementById('count');
+const types=['All',...new Set(photos.map(p=>p.type))];
+let current='All', shown=[];
+tabs.innerHTML=types.map(t=>`<button data-t="${t}">${t}</button>`).join('');
+function render(){
+  shown=photos.filter(p=>current==='All'||p.type===current);
+  grid.innerHTML=shown.length?shown.map((p,i)=>`<figure class="${p.landscape?'landscape':''}" data-i="${i}"><img loading="lazy" src="${p.src}" alt="${p.caption}"><figcaption><span>${p.caption}</span>${p.credit?`<span>© ${p.credit}</span>`:''}</figcaption></figure>`).join(''):'<p class="empty">No photos here yet.</p>';
+  count.textContent=`${shown.length} photo${shown.length===1?'':'s'}`;
+  tabs.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.t===current));
+}
+tabs.onclick=e=>{if(e.target.dataset.t){current=e.target.dataset.t;render()}};
+render();
+
+const lb=document.getElementById('lb'), lbImg=lb.querySelector('img'), lbCap=lb.querySelector('figcaption');
+let idx=0;
+function show(i){idx=(i+shown.length)%shown.length;const p=shown[idx];lbImg.src=p.src;lbImg.alt=p.caption;lbCap.textContent=`${p.caption}${p.credit?' · © '+p.credit:''} — ${idx+1} / ${shown.length}`}
+grid.onclick=e=>{const f=e.target.closest('figure');if(f){show(+f.dataset.i);lb.classList.add('on')}};
+lb.querySelector('.prev').onclick=e=>{e.stopPropagation();show(idx-1)};
+lb.querySelector('.next').onclick=e=>{e.stopPropagation();show(idx+1)};
+lb.querySelector('.close').onclick=()=>lb.classList.remove('on');
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove('on')};
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')show(idx-1);if(e.key==='ArrowRight')show(idx+1)});
+
+const menu=document.getElementById('menu'),burger=document.getElementById('burger');
+burger.onclick=()=>{menu.classList.toggle('open');burger.textContent=menu.classList.contains('open')?'Close':'Menu'};
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
