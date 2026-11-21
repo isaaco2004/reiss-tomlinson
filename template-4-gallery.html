@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery — Reiss Tomlinson</title>
+<meta name="description" content="Headshots and production photography of actor Reiss Tomlinson.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f4f1ea; --cream-2:#e8e4da; --paper:#fbfaf6;
+    --green:#0f1633; --green-2:#1a2347; --sage:#a9b9ff;
+    --clay:#2347e0; --clay-2:#1a37b8;
+    --ink:#121521; --ink-2:#5b6072; --line:rgba(18,21,33,.14);
+    --serif:"Bricolage Grotesque", system-ui, sans-serif; --sans:"Inter", system-ui, sans-serif;
+    --gutter:clamp(16px,4vw,56px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{padding:0 var(--gutter);max-width:1280px;margin:0 auto}
+  h1,h2{font-family:var(--serif);font-weight:800;line-height:1.02;letter-spacing:-.015em}
+  .kicker{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--clay)}
+  .kicker::before{content:"";width:22px;height:1.5px;background:currentColor}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--clay);color:var(--paper);border-radius:100px;padding:13px 22px;font-weight:600;font-size:14px;transition:background .2s,transform .2s}
+  .btn:hover{background:var(--clay-2);transform:translateY(-2px)}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(241,235,223,.95);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:16px;padding-bottom:16px}
+  .mono{display:inline-grid;place-items:center;width:42px;height:42px;background:var(--clay);color:var(--paper);font-family:var(--serif);font-weight:800;font-size:17px;border-radius:10px}
+  .wordmark i{font-weight:400;color:var(--clay)}
+  nav ul{display:flex;gap:28px;list-style:none}
+  nav ul a{font-size:14px;font-weight:500;color:var(--ink-2);transition:color .2s}
+  nav ul a:hover,nav ul a.on{color:var(--green)}
+  nav ul a.on{text-decoration:underline;text-decoration-color:var(--clay);text-decoration-thickness:2px;text-underline-offset:6px}
+  nav .btn{padding:9px 16px;font-size:13px}
+  .burger{display:none;background:none;border:0;font:600 13px var(--sans);color:var(--green);cursor:pointer}
+
+  .page-head{padding:clamp(32px,4vw,56px) 0 0}
+  .back{display:inline-block;font-size:14px;font-weight:500;color:var(--ink-2);margin-bottom:14px}
+  .back:hover{color:var(--green)}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;padding-bottom:16px;border-bottom:1.5px solid var(--green);margin-bottom:22px}
+  .head h1{font-size:clamp(46px,6vw,84px);margin-top:6px}
+  .head h1 em{font-style:italic;color:var(--clay)}
+  .count{font-size:13px;color:var(--ink-2);margin-top:8px}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap}
+  .tabs button{background:none;border:1.5px solid var(--line);border-radius:100px;padding:8px 14px;font:500 13px var(--sans);color:var(--ink-2);cursor:pointer;transition:.2s}
+  .tabs button:hover{border-color:var(--green);color:var(--green)}
+  .tabs button.on{background:var(--green);border-color:var(--green);color:var(--cream)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));grid-auto-rows:clamp(240px,26vw,340px);gap:12px;padding-bottom:clamp(32px,4vw,56px)}
+  .grid figure{position:relative;overflow:hidden;border-radius:14px;cursor:zoom-in;background:var(--cream-2)}
+  .grid figure.landscape{grid-column:span 2}
+  .grid img{width:100%;height:100%;object-fit:cover;object-position:center 25%;transition:transform .9s}
+  .grid figure:hover img{transform:scale(1.04)}
+  .grid figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;gap:8px;padding:28px 14px 12px;background:linear-gradient(0deg,rgba(15,22,51,.75),transparent);color:var(--paper);font-size:12.5px;opacity:0;transition:opacity .3s}
+  .grid figure:hover figcaption{opacity:1}
+  .empty{padding:40px 0;color:var(--ink-2)}
+
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(15,22,51,.96);display:none;grid-template-columns:72px 1fr 72px;align-items:center;padding:3vh 2vw}
+  .lb.on{display:grid}
+  .lb figure{display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0}
+  .lb img{max-height:84vh;width:auto;max-width:100%;border-radius:4px}
+  .lb figcaption{color:var(--cream);font-size:13px;text-align:center}
+  .lb button{width:52px;height:52px;border-radius:50%;border:0;background:var(--clay);color:var(--paper);font-size:22px;line-height:1;cursor:pointer;justify-self:center;transition:background .2s}
+  .lb button:hover{background:var(--clay-2)}
+  .lb .close{position:absolute;top:18px;right:18px;width:44px;height:44px;font-size:18px;background:var(--paper);color:var(--green)}
+
+  .cta{background:var(--green);color:var(--cream)}
+  .cta .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;padding-top:30px;padding-bottom:30px}
+  .cta h2{font-size:clamp(28px,3.4vw,42px)}
+  .cta h2 em{font-style:italic;color:#a9b9ff}
+  footer{background:var(--green);color:var(--sage);font-size:12.5px;border-top:1px solid rgba(241,235,223,.15)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:16px;padding-bottom:16px}
+
+  @media (max-width:680px){
+    nav ul{display:none;position:fixed;inset:0;background:var(--cream);flex-direction:column;align-items:center;justify-content:center;gap:26px}
+    nav ul.open{display:flex}
+    nav ul a{font-size:18px}
+    nav .btn.nav-cta{display:none}
+    .burger{display:block;position:relative;z-index:60}
+    .grid{grid-template-columns:1fr 1fr;grid-auto-rows:220px;gap:8px}
+    .grid figure.landscape{grid-column:span 2}
+    .grid figcaption{opacity:1}
+    .lb{grid-template-columns:44px 1fr 44px}
+    .lb button{width:40px;height:40px;font-size:18px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="template-4-cobalt.html#top" class="mono" aria-label="Reiss Tomlinson, home">RT</a>
+    <ul id="menu">
+      <li><a href="template-4-cobalt.html#about">About</a></li>
+      <li><a href="template-4-cobalt.html#reel">Showreel</a></li>
+      <li><a href="template-4-cobalt.html#credits">Credits</a></li>
+      <li><a href="template-4-gallery.html" class="on">Gallery</a></li>
+      <li><a href="template-4-cobalt.html#contact">Contact</a></li>
+    </ul>
+    <a href="template-4-cobalt.html#contact" class="btn nav-cta">Get in touch</a>
+    <button class="burger" id="burger" aria-label="Menu">Menu</button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <a class="back" href="template-4-cobalt.html#gallery">← Back to home</a>
+    <div class="head">
+      <div>
+        <span class="kicker">Photography</span>
+        <h1>GALLERY</h1>
+        <p class="count" id="count"></p>
+      </div>
+      <div class="tabs" id="tabs"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap"><div class="grid" id="grid"></div></main>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Need high-res <em>images?</em></h2>
+    <a class="btn" href="mailto:circuitpm@outlook.com">Contact his agent →</a>
+  </div>
+</section>
+<footer><div class="wrap"><span>© <span id="yr"></span> Reiss Tomlinson</span><span>Headshots © Tom Barker</span></div></footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="prev" aria-label="Previous photo">‹</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="next" aria-label="Next photo">›</button>
+  <button class="close" aria-label="Close">✕</button>
+</div>
+
+<script>
+/* ─────────────────────────────────────────────────────────────
+   ADD PHOTOS HERE
+   1. Put the image in the assets folder.
+   2. Add a line below. "type" decides which filter it appears under:
+      "Headshots", "Production" or anything new (a new name becomes
+      a new filter button automatically).
+   3. Set landscape:true for wide photos so they span two columns.
+   ───────────────────────────────────────────────────────────── */
+const photos = [
+  { src:"assets/headshot-1.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
+  { src:"assets/headshot-3.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
+  { src:"assets/ferryman-still.jpg", type:"Production", caption:"The Ferryman — Diarmaid Corcoran", credit:"", landscape:true },
+  { src:"assets/headshot-4.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
+  { src:"assets/headshot-2.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
+  { src:"assets/headshot-5.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
+];
+
+const grid=document.getElementById('grid'), tabs=document.getElementById('tabs'), count=document.getElementById('count');
+const types=['All',...new Set(photos.map(p=>p.type))];
+let current='All', shown=[];
+tabs.innerHTML=types.map(t=>`<button data-t="${t}">${t}</button>`).join('');
+function render(){
+  shown=photos.filter(p=>current==='All'||p.type===current);
+  grid.innerHTML=shown.length?shown.map((p,i)=>`<figure class="${p.landscape?'landscape':''}" data-i="${i}"><img loading="lazy" src="${p.src}" alt="${p.caption}"><figcaption><span>${p.caption}</span>${p.credit?`<span>© ${p.credit}</span>`:''}</figcaption></figure>`).join(''):'<p class="empty">No photos here yet.</p>';
+  count.textContent=`${shown.length} photo${shown.length===1?'':'s'}`;
+  tabs.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.t===current));
+}
+tabs.onclick=e=>{if(e.target.dataset.t){current=e.target.dataset.t;render()}};
+render();
+
+const lb=document.getElementById('lb'), lbImg=lb.querySelector('img'), lbCap=lb.querySelector('figcaption');
+let idx=0;
+function show(i){idx=(i+shown.length)%shown.length;const p=shown[idx];lbImg.src=p.src;lbImg.alt=p.caption;lbCap.textContent=`${p.caption}${p.credit?' · © '+p.credit:''} — ${idx+1} / ${shown.length}`}
+grid.onclick=e=>{const f=e.target.closest('figure');if(f){show(+f.dataset.i);lb.classList.add('on')}};
+lb.querySelector('.prev').onclick=e=>{e.stopPropagation();show(idx-1)};
+lb.querySelector('.next').onclick=e=>{e.stopPropagation();show(idx+1)};
+lb.querySelector('.close').onclick=()=>lb.classList.remove('on');
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove('on')};
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')show(idx-1);if(e.key==='ArrowRight')show(idx+1)});
+
+const menu=document.getElementById('menu'),burger=document.getElementById('burger');
+burger.onclick=()=>{menu.classList.toggle('open');burger.textContent=menu.classList.contains('open')?'Close':'Menu'};
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
