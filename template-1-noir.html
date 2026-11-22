@@ -142,6 +142,10 @@
   .btns .btn{margin-top:0}
   .btn{display:inline-flex;align-items:center;gap:12px;margin-top:22px;border:1px solid var(--ink);padding:14px 22px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;transition:.3s}
   .btn:hover{background:var(--ink);color:var(--bg)}
+  .btn.solid{background:var(--ink);color:var(--bg)}
+  .btn.solid:hover{background:var(--accent);border-color:var(--accent)}
+  .btn svg{width:12px;height:12px;fill:currentColor}
+  .hero .btns{margin-top:30px}
   footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:26px var(--gutter);border-top:1px solid var(--line);font-size:11px;color:var(--muted);letter-spacing:.1em}
 
   /* reveal */
@@ -193,6 +197,10 @@
       <div><span class="label">Discipline</span>Actor · Voice · Musician</div>
       <div><span class="label">Based</span>Greater Manchester</div>
       <div><span class="label">Playing age</span>16 – 25</div>
+    </div>
+    <div class="btns">
+      <a class="btn solid" href="#reel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>Watch showreel</a>
+      <a class="btn" href="#contact">Contact agent</a>
     </div>
   </div>
   <div class="hero-img">
