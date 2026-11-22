@@ -127,6 +127,9 @@
   .btns .btn{margin-top:0}
   .btn{display:inline-flex;align-items:center;gap:12px;margin-top:22px;border:1px solid var(--ink);padding:14px 22px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;transition:.3s}
   .btn:hover{background:var(--ink);color:var(--bg)}
+  button.btn{background:none;color:var(--ink);font-family:var(--sans);cursor:pointer}
+  button.btn:hover{background:var(--ink);color:var(--bg)}
+  .btn[hidden]{display:none}
   .btn.solid{background:var(--ink);color:var(--bg)}
   .btn.solid:hover{background:var(--accent);border-color:var(--accent)}
   .btn svg.play-ico{width:12px;height:12px;fill:currentColor}
@@ -254,6 +257,9 @@
       <button data-f="Audio">Radio &amp; Ident</button>
     </div>
     <div id="list"></div>
+    <div class="gallery-foot">
+      <button class="btn" id="creditsMore" type="button" aria-controls="list"></button>
+    </div>
   </div>
 </section>
 
@@ -325,14 +331,21 @@ const credits=[
   ["2023","Macbeth","Stage","Porter","Sarah Stone","UCLan","Stage"],
   ["2016","The Full Monty","Stage","Nathan","Jack Ryder","David Pugh Ltd","Stage"]
 ];
-const list=document.getElementById('list'), count=document.getElementById('count');
+const list=document.getElementById('list'), count=document.getElementById('count'), more=document.getElementById('creditsMore');
+const SHOW=6; let filter='All', expanded=false;
 function render(f){
-  const rows=credits.filter(c=>f==='All'||c[6]===f);
+  if(f!==undefined){ if(f!==filter) expanded=false; filter=f; } else f=filter;
+  const all=credits.filter(c=>f==='All'||c[6]===f);
+  const rows=expanded?all:all.slice(0,SHOW);
+  more.hidden=all.length<=SHOW;
+  more.textContent=expanded?'Show fewer ↑':`View all ${all.length} credits ↓`;
+  more.setAttribute('aria-expanded',expanded);
   list.innerHTML=rows.map(c=>`<div class="credit${c[7]?' feature':''}"><span class="yr">${c[0]}</span><span class="t">${c[1]}<small>${c[2]}</small></span><span class="r">${c[3]}</span><span class="d">Dir. ${c[4]}</span><span class="c">${c[5]}</span></div>`).join('');
-  count.textContent=rows.length+' credits';
+  count.textContent=all.length+' credits';
   document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.f===f));
 }
 document.getElementById('tabs').addEventListener('click',e=>{if(e.target.dataset.f)render(e.target.dataset.f)});
+more.addEventListener('click',()=>{expanded=!expanded;render();if(!expanded)document.getElementById('credits').scrollIntoView({behavior:'smooth'})});
 render('All');
 
 document.getElementById('mq').innerHTML=Array(2).fill(credits.slice(0,10).map(c=>c[1]).join('<b>✦</b>')+'<b>✦</b>').join('');
