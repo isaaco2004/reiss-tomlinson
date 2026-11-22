@@ -108,14 +108,6 @@
   .lede{font-family:var(--serif);font-size:clamp(26px,2.8vw,40px);line-height:1.25;margin-bottom:32px}
   .lede em{color:var(--accent)}
   .body p{margin-bottom:18px;color:#c9c4bb;max-width:62ch}
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin:48px 0}
-  .stats div{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .stats .label{display:block;margin-bottom:6px;font-size:10px}
-  .stats p{font-size:15px;margin:0;color:var(--ink)}
-  .skills{display:grid;grid-template-columns:1fr 1fr;gap:32px 40px}
-  .skills h3{margin-bottom:12px}
-  .chips{display:flex;flex-wrap:wrap;gap:6px}
-  .chips span{border:1px solid var(--line);padding:6px 12px;font-size:12px;border-radius:100px;color:#cfc9bf}
   .training{margin-top:48px}
   .training li{list-style:none;display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px}
   .training li span:first-child{color:var(--muted)}
@@ -168,8 +160,6 @@
     .gallery .g4{grid-column:span 2 !important;aspect-ratio:16/10 !important}
     .about{grid-template-columns:1fr}
     .about-img{position:relative;top:0}
-    .stats{grid-template-columns:1fr 1fr}
-    .skills{grid-template-columns:1fr}
     .contact .wrap{grid-template-columns:1fr;min-height:auto}
   }
   @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}.rv{opacity:1;transform:none}}
@@ -222,22 +212,6 @@
         <p class="lede rv">Actor based in Greater Manchester, recently seen as <em>Young Danny Sloane</em> in the BBC's <em>Ludwig</em>.</p>
         <p class="rv">Reiss played the lead in the short film <em>Condensation</em>, which premiered at the SCENE Film Festival at HOME. He co-founded the theatre company <em>Theatre On Draught</em>, which debuted its first play, <em>The Divine Move</em>, at the Greater Manchester Fringe and continues to make new work.</p>
         <p class="rv">He trained in acting at the University of Lancashire and completed the National Youth Theatre's summer course this year. Away from acting, Reiss is writing and developing original music.</p>
-
-        <div class="stats rv">
-          <div><span class="label">Height</span><p>5′9″ · 175cm</p></div>
-          <div><span class="label">Playing age</span><p>16 – 25</p></div>
-          <div><span class="label">Eyes</span><p>Brown</p></div>
-          <div><span class="label">Hair</span><p>Light/Mid Brown, mid length</p></div>
-          <div><span class="label">Nationality</span><p>British</p></div>
-          <div><span class="label">Locations</span><p>Manchester · London · S. Yorkshire</p></div>
-        </div>
-
-        <div class="skills">
-          <div class="rv"><h3 class="label">Accents</h3><div class="chips"><span>Standard English</span><span>Sheffield</span><span>Yorkshire</span><span>Black Country</span><span>RP</span><span>Northern Irish</span><span>American Standard</span><span>American Southern</span></div></div>
-          <div class="rv"><h3 class="label">Music &amp; Performance</h3><div class="chips"><span>Tenor</span><span>Guitar</span><span>Musical Theatre</span><span>Physical Theatre</span><span>Clown</span><span>Comedy</span><span>Radio Drama</span><span>Presenting</span><span>Voice Over</span></div></div>
-          <div class="rv"><h3 class="label">Sport &amp; Physical</h3><div class="chips"><span>Boxing</span><span>Stage Combat</span><span>Football</span><span>Basketball</span><span>Open-water Swimming</span><span>Lifeguard (NPLQ)</span><span>Wakeboarding</span><span>Snooker</span><span>Biomechanics</span></div></div>
-          <div class="rv"><h3 class="label">Other</h3><div class="chips"><span>Full UK Driving Licence</span><span>Bartender</span><span>Promenade Theatre</span><span>Poetry Reading</span></div></div>
-        </div>
 
         <ul class="training rv">
           <li class="label" style="display:block;border:0;padding-bottom:4px">Training</li>
