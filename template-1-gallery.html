@@ -43,9 +43,8 @@
   .tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 
   /* GRID — even rows */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));grid-auto-rows:clamp(260px,28vw,380px);gap:10px;padding-bottom:clamp(32px,4vw,56px)}
-  .grid figure{position:relative;overflow:hidden;cursor:zoom-in;background:var(--bg-2)}
-  .grid figure.landscape{grid-column:span 2}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-bottom:clamp(32px,4vw,56px)}
+  .grid figure{position:relative;overflow:hidden;cursor:zoom-in;background:var(--bg-2);aspect-ratio:4/5}
   .grid img{width:100%;height:100%;object-fit:cover;object-position:center 25%;filter:grayscale(1);transition:filter .7s,transform 1.2s}
   .grid figure:hover img{filter:grayscale(0);transform:scale(1.03)}
   .grid figcaption{position:absolute;left:14px;right:14px;bottom:12px;display:flex;justify-content:space-between;gap:10px;font-size:10px;letter-spacing:.25em;text-transform:uppercase;opacity:0;transition:opacity .4s;text-shadow:0 1px 8px rgba(0,0,0,.7)}
@@ -75,8 +74,7 @@
     nav ul.open{display:flex}
     nav ul a{font-size:14px}
     .burger{display:block;position:relative;z-index:60}
-    .grid{grid-template-columns:1fr 1fr;grid-auto-rows:220px;gap:8px}
-    .grid figure.landscape{grid-column:span 2}
+    .grid{grid-template-columns:1fr 1fr;gap:8px}
     .grid figcaption{opacity:.9}
     .lb{grid-template-columns:46px 1fr 46px}
     .lb button{width:40px;height:40px;font-size:18px}
@@ -137,12 +135,12 @@
    2. Add a line below. "type" decides which filter it appears under:
       "Headshots", "Production" or anything new (a new name becomes
       a new filter button automatically).
-   3. Set landscape:true for wide photos so they span two columns.
+   3. Photos show as even portrait tiles in rows of three.
    ───────────────────────────────────────────────────────────── */
 const photos = [
   { src:"assets/headshot-1.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
   { src:"assets/headshot-3.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
-  { src:"assets/ferryman-still.jpg", type:"Production", caption:"The Ferryman — Diarmaid Corcoran", credit:"", landscape:true },
+  { src:"assets/ferryman-still.jpg", type:"Production", caption:"The Ferryman — Diarmaid Corcoran", credit:"" },
   { src:"assets/headshot-4.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
   { src:"assets/headshot-2.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
   { src:"assets/headshot-5.jpg",     type:"Headshots",  caption:"Headshot",                         credit:"Tom Barker" },
