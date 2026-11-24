@@ -85,8 +85,8 @@
   /* GALLERY */
   .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
   .gallery figure{overflow:hidden;position:relative;cursor:zoom-in;background:var(--bg-2);aspect-ratio:4/5}
-  .gallery img{width:100%;height:100%;object-fit:cover;object-position:center 25%;filter:grayscale(1);transition:filter .7s,transform 1.2s}
-  .gallery figure:hover img{filter:grayscale(0);transform:scale(1.03)}
+  .gallery img{width:100%;height:100%;object-fit:cover;object-position:center 25%;transition:transform 1.2s}
+  .gallery figure:hover img{transform:scale(1.03)}
   .gallery figcaption{position:absolute;left:14px;bottom:12px;font-size:10px;letter-spacing:.25em;text-transform:uppercase;opacity:0;transition:opacity .4s}
   .gallery figure:hover figcaption{opacity:.85}
   .lightbox{position:fixed;inset:0;background:rgba(5,5,5,.96);z-index:100;display:none;place-items:center;padding:4vh 4vw;cursor:zoom-out}
@@ -188,13 +188,13 @@
   <div class="hero-text">
     <h1>Reiss<em>Tomlinson</em></h1>
     <div class="hero-meta">
-      <div><span class="label">Discipline</span>Actor · Voice · Musician</div>
+      <div><span class="label">Discipline</span>Actor · Director · Musician</div>
       <div><span class="label">Based</span>Greater Manchester</div>
       <div><span class="label">Playing age</span>16 – 25</div>
     </div>
     <div class="btns">
       <a class="btn solid" href="#reel"><svg class="play-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>Watch showreel</a>
-      <a class="btn" href="#contact">Contact agent</a>
+      <a class="btn" href="#contact">Contact</a>
     </div>
   </div>
   <div class="hero-img">
@@ -255,6 +255,7 @@
       <button data-f="Screen">Screen</button>
       <button data-f="Stage">Stage</button>
       <button data-f="Audio">Radio &amp; Ident</button>
+      <button data-f="Director">Director</button>
     </div>
     <div id="list"></div>
     <div class="gallery-foot">
@@ -288,7 +289,7 @@
 <section id="contact" class="contact">
   <div class="contact-bg"><img loading="lazy" src="assets/headshot-3.jpg" alt=""></div>
   <div class="wrap">
-    <h2 class="rv">Let's<br><em>work.</em></h2>
+    <h2 class="rv">Get in<br><em>touch.</em></h2>
     <div class="agent rv">
       <span class="label">Representation</span>
       <h3>Circuit Personal Management</h3>
@@ -312,6 +313,7 @@
 
 <script>
 const credits=[
+  ["—","That Face","Stage","Director","Polly Stenham","","Director"],
   ["2026","Ludwig","Television","Young Danny Sloane","Stella Corradi","Big Talk Studios / BBC","Screen",1],
   ["2026","Condensation","Short Film","Jordan (Lead)","Joshua Val Martin","IAP:MCR","Screen",1],
   ["2026","Four Feet Eleven Inches","Short Film","Drug Buyer","Elliot Morris","Lost In Salford Productions","Screen"],
@@ -340,7 +342,7 @@ function render(f){
   more.hidden=all.length<=SHOW;
   more.textContent=expanded?'Show fewer ↑':`View all ${all.length} credits ↓`;
   more.setAttribute('aria-expanded',expanded);
-  list.innerHTML=rows.map(c=>`<div class="credit${c[7]?' feature':''}"><span class="yr">${c[0]}</span><span class="t">${c[1]}<small>${c[2]}</small></span><span class="r">${c[3]}</span><span class="d">Dir. ${c[4]}</span><span class="c">${c[5]}</span></div>`).join('');
+  list.innerHTML=rows.map(c=>`<div class="credit${c[7]?' feature':''}"><span class="yr">${c[0]}</span><span class="t">${c[1]}<small>${c[2]}</small></span><span class="r">${c[3]}</span><span class="d">${c[6]==='Director'?'By ':'Dir. '}${c[4]}</span><span class="c">${c[5]}</span></div>`).join('');
   count.textContent=all.length+' credits';
   document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.f===f));
 }
